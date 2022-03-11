@@ -107,7 +107,7 @@ const router = new VueRouter({ mode: 'history', routes: routes });
 // Meta Handling
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (localStorage.getItem('user') == null) { //aici in loc de user scria jwt, dar am schimbat pt ca localStorage.clear() nu sterge jwt
+    if (localStorage.getItem('user') == null) {
       next({
         name: 'startpage',
         params: { nextUrl: to.fullPath }
